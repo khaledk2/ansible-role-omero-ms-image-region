@@ -83,6 +83,20 @@
 - import_tasks: update_nginx_config.yml
   when: omero_ms_image_region_update_nginx
 
+
+- name: enable omero-ms-image-region service
+  become: true
+  ansible.builtin.service:
+    name: omero-ms-image-region.service
+    enabled: true
+
+- name: restart omero-ms-image-region service
+  become: true
+  ansible.builtin.service:
+    state: started
+    daemon_reload: true
+    name: omero-ms-image-region.service
+
 - name: Get Service Status
   ansible.builtin.systemd:
     name: "omero-ms-image-region.service"
