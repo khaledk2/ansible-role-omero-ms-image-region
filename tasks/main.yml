@@ -93,3 +93,10 @@
 
 - debug:
     var: ms_service_status.status.ActiveState
+
+- name: read service file
+  slurp:
+    src: /etc/systemd/system/omero-ms-image-region.service
+  register: service_file
+
+- debug: msg="{{ service_file['content'] | b64decode }}"
