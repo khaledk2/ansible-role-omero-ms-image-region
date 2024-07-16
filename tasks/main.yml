@@ -82,3 +82,14 @@
 
 - import_tasks: update_nginx_config.yml
   when: omero_ms_image_region_update_nginx
+
+- name: Get Service Status
+  ansible.builtin.systemd:
+    name: "omero-ms-image-region.service"
+  register: ms_service_status
+
+- debug:
+    var: ms_service_status
+
+- debug:
+    var: ms_service_status.status.ActiveState
