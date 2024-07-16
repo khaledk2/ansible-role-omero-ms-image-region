@@ -4,6 +4,8 @@
   roles:
   - role: ome.redis
   - role: ome.java
+    java_jdk_install: true
+
     java_versions: 11
   - role: ome.postgresql
     postgresql_version: "14"
