@@ -108,3 +108,13 @@
   become: true
 
 - debug: var=services_status.stdout_lines
+
+- name: Services journal status
+  shell: journalctl  -b -u  omero-ms-image-region.service -o  json
+  register: j_services_status
+  ignore_errors: true
+  become: true
+
+- debug: var=j_services_status
+
+- debug: var=j_services_status.stdout_lines
