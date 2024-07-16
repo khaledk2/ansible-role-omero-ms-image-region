@@ -3,6 +3,8 @@
   hosts: all
   roles:
   - role: ome.redis
+  - role: ome.java
+    java_versions: 11
   - role: ome.postgresql
     postgresql_version: "14"
     postgresql_databases:
