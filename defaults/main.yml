@@ -53,8 +53,6 @@ omero_ms_image_region_package_sha256: 1a5edd6f77a37e18712c72130e5549ea02fa3c5db3
 
 omero_ms_image_region_name: "{{ omero_ms_image_region_download_URL | basename }}"
 
-base_omero_ms_image_region_name: "omero-ms-image-region-0.10.0"
-
 omero_ms_image_region_redis_url: 'localhost'
 omero_ms_image_region_redis_port: '6379'
 omero_ms_image_region_redis_pass: ''

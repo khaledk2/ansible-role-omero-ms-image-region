@@ -84,51 +84,51 @@
   when: omero_ms_image_region_update_nginx
 
 
-- name: enable omero-ms-image-region service
-  become: true
-  ansible.builtin.service:
-    name: omero-ms-image-region.service
-    enabled: true
+#- name: enable omero-ms-image-region service
+#  become: true
+#  ansible.builtin.service:
+#    name: omero-ms-image-region.service
+#    enabled: true
 
-- name: restart omero-ms-image-region service
-  become: true
-  ansible.builtin.service:
-    state: started
-    daemon_reload: true
-    name: omero-ms-image-region.service
+#- name: restart omero-ms-image-region service
+#  become: true
+#  ansible.builtin.service:
+#    state: started
+#    daemon_reload: true
+#    name: omero-ms-image-region.service
 
-- name: Get Service Status
-  ansible.builtin.systemd:
-    name: "omero-ms-image-region.service"
-  register: ms_service_status
+#- name: Get Service Status
+#  ansible.builtin.systemd:
+#    name: "omero-ms-image-region.service"
+#  register: ms_service_status
 
-- debug:
-    var: ms_service_status
+#- debug:
+#    var: ms_service_status
 
-- debug:
-    var: ms_service_status.status.ActiveState
+#- debug:
+#    var: ms_service_status.status.ActiveState
 
-- name: read service file
-  slurp:
-    src: /etc/systemd/system/omero-ms-image-region.service
-  register: service_file
+#- name: read service file
+#  slurp:
+#    src: /etc/systemd/system/omero-ms-image-region.service
+#  register: service_file
 
-- debug: msg="{{ service_file['content'] | b64decode }}"
+#- debug: msg="{{ service_file['content'] | b64decode }}"
 
-- name: Services status
-  shell: systemctl status omero-ms-image-region.service
-  register: services_status
-  ignore_errors: true
-  become: true
+#- name: Services status
+#  shell: systemctl status omero-ms-image-region.service
+#  register: services_status
+#  ignore_errors: true
+#  become: true
 
-- debug: var=services_status.stdout_lines
+#- debug: var=services_status.stdout_lines
 
-- name: Services journal status
-  shell: journalctl  -b -u  omero-ms-image-region.service -o  json
-  register: j_services_status
-  ignore_errors: true
-  become: true
+#- name: Services journal status
+#  shell: journalctl  -b -u  omero-ms-image-region.service -o  json
+#  register: j_services_status
+#  ignore_errors: true
+#  become: true
 
-- debug: var=j_services_status
+#- debug: var=j_services_status
 
-- debug: var=j_services_status.stdout_lines
+#- debug: var=j_services_status.stdout_lines
