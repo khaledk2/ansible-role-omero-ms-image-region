@@ -104,6 +104,7 @@
 - name: Services status
   shell: systemctl status omero-ms-image-region.service
   register: services_status
+  ignore_errors: true
   become: true
 
 - debug: var=services_status.stdout_lines
