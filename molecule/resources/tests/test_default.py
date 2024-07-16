@@ -24,7 +24,7 @@ def test_service_running_and_enabled(host):
     assert host.service('omero-server').is_enabled
 
 def test_omero_ms_folder(host):
-    ms_directory =host.file("/opt/omero/microservice/omero-ms-image-region/logs")
+    ms_directory =host.file("/opt/omero/microservice/omero-ms-image-region")
     assert ms_directory.is_directory
 
 def test_omero_ms_logs(host):
