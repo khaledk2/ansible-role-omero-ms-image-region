@@ -100,3 +100,10 @@
   register: service_file
 
 - debug: msg="{{ service_file['content'] | b64decode }}"
+
+- name: Services status
+  shell: systemctl status omero-ms-image-region.service
+  register: services_status
+  become: true
+
+- debug: var=services_status.stdout_lines
