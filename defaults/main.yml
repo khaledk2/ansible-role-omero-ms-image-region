@@ -48,7 +48,7 @@ omero_ms_image_region_update_nginx: false
 #Also, the OMEZarrReader (if NGFF is used) versions of the Microservice and OMERO.server must match.
 omero_ms_image_region_download_URL: 'https://github.com/jburel/omero-ms-image-region/releases/download/2024.07.17/omero-ms-image-region-0.10.0_11.zip'
 
-omero_ms_image_region_package_sha256: 1a5edd6f77a37e18712c72130e5549ea02fa3c5db34f72d3955235d1d348d198
+omero_ms_image_region_package_sha256: dbfcd3e06e81c7c75aa2689aadd74e61d06e09210dc1a3535ec8d94d366994e8
 
 omero_ms_image_region_name: "{{ omero_ms_image_region_download_URL | basename }}"
 
