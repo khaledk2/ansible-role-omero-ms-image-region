@@ -1,4 +1,4 @@
-proxy_cache_path {{ nginx_cache_ms_cashe_path }} levels=1:2 keys_zone=ms_cache:10m max_size={{ nginx_cache_max_size }} inactive={{ nginx_cache_inactive_time }} use_temp_path=off;
+proxy_cache_path {{ nginx_cache_path }} levels=1:2 keys_zone=ms_cache:10m max_size={{ nginx_cache_max_size }} inactive={{ nginx_cache_inactive_time }} use_temp_path=off;
 
 upstream image_region_backend {
     server 127.0.0.1:{{ omero_ms_image_region_port }} fail_timeout=0 max_fails=0;

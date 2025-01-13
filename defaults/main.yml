@@ -72,4 +72,4 @@ nginx_cache_expiration_time: 60m
 nginx_cache_inactive_time: 120m
 nginx_cache_max_size: 25m
 
-nginx_cache_ms_cash_path: '/var/cache/nginx/ms'
+nginx_cache_path: '/var/cache/nginx/ms'
