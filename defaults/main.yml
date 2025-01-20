@@ -71,3 +71,5 @@ omero_ms_image_region_max_active_channels: 10
 nginx_cache_expiration_time: 60m
 nginx_cache_inactive_time: 120m
 nginx_cache_max_size: 25m
+
+nginx_cache_path: '/var/cache/nginx/omero-ms-image-region'
