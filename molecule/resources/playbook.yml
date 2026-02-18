@@ -16,9 +16,9 @@
   - role: ome.java
     java_versions: 21
 
-  - role: ome.omero_server
-    omero_server_release: 5.6.10
-    postgresql_version: "16"
+  #- role: ome.omero_server
+  #  omero_server_release: 5.6.10
+  #  postgresql_version: "16"
 
   - role: ome.omero_web
     omero_web_setup_redis_session: true
