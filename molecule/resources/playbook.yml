@@ -4,7 +4,7 @@
   roles:
   - role: ome.redis
   - role: ome.postgresql
-    postgresql_version: "14"
+    postgresql_version: "16"
     postgresql_databases:
         - name: omero
           owner: omero
@@ -14,11 +14,11 @@
         databases: [ omero ]
 
   - role: ome.java
-    java_versions: 11
+    java_versions: 21
 
   - role: ome.omero_server
     omero_server_release: 5.6.10
-    postgresql_version: "14"
+    postgresql_version: "16"
 
   - role: ome.omero_web
     omero_web_setup_redis_session: true
@@ -31,3 +31,5 @@
        "omero.web.session_engine": "django.contrib.sessions.backends.cache"
 
   - role: ome.omero_ms_image_region
+    omero_ms_image_region_download_URL: 'https://github.com/ome/omero-ms-image-region/releases/download/v2025.11.05/omero-ms-image-region-0.10.0_21.zip'
+    omero_ms_image_region_package_sha256: 128c1d27059c748a828908d60619814ace65376bc3040b5d8146154579a13003
